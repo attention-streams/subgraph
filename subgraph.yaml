@@ -1,0 +1,22 @@
+specVersion: 0.0.1
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: Arena
+    network: rinkeby
+    source:
+      address: "0x99b4ba32a258Add555B751C8C8B6a6673a284247"
+      abi: Arena
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      entities:
+
+      abis:
+        - name: Arena
+          file: ./abis/Arena.json
+      eventHandlers:
+
+      file: ./src/mapping.ts

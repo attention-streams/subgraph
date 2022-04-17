@@ -1,0 +1,16 @@
+{
+  "name": "attentionstreams",
+  "license": "UNLICENSED",
+  "scripts": {
+    "codegen": "graph codegen",
+    "build": "graph build",
+    "deploy": "graph deploy --node https://api.studio.thegraph.com/deploy/ attentionstreams",
+    "create-local": "graph create --node http://localhost:8020/ attentionstreams",
+    "remove-local": "graph remove --node http://localhost:8020/ attentionstreams",
+    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 attentionstreams"
+  },
+  "dependencies": {
+    "@graphprotocol/graph-cli": "0.29.0",
+    "@graphprotocol/graph-ts": "0.26.0"
+  }
+}

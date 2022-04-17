@@ -1,0 +1,358 @@
+[
+  {
+    "inputs": [
+      {
+        "components": [
+          { "internalType": "string", "name": "_name", "type": "string" },
+          {
+            "internalType": "contract IERC20",
+            "name": "_token",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "_minContributionAmount",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint16",
+            "name": "_maxChoiceFeePercentage",
+            "type": "uint16"
+          },
+          {
+            "internalType": "uint16",
+            "name": "_maxTopicFeePercentage",
+            "type": "uint16"
+          },
+          {
+            "internalType": "uint16",
+            "name": "_arenaFeePercentage",
+            "type": "uint16"
+          },
+          {
+            "internalType": "uint256",
+            "name": "_choiceCreationFee",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "_topicCreationFee",
+            "type": "uint256"
+          },
+          {
+            "internalType": "address payable",
+            "name": "_funds",
+            "type": "address"
+          }
+        ],
+        "internalType": "struct ArenaInfo",
+        "name": "_info",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "topicId", "type": "uint256" }
+    ],
+    "name": "_nextChoiceIdInTopic",
+    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "_nextTopicId",
+    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "topicId", "type": "uint256" },
+      {
+        "components": [
+          {
+            "internalType": "string",
+            "name": "_description",
+            "type": "string"
+          },
+          {
+            "internalType": "address payable",
+            "name": "_funds",
+            "type": "address"
+          },
+          {
+            "internalType": "uint16",
+            "name": "_feePercentage",
+            "type": "uint16"
+          },
+          {
+            "internalType": "uint256",
+            "name": "_fundingTarget",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct Choice",
+        "name": "choice",
+        "type": "tuple"
+      }
+    ],
+    "name": "addChoice",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint32",
+            "name": "_cycleDuration",
+            "type": "uint32"
+          },
+          {
+            "internalType": "uint16",
+            "name": "_sharePerCyclePercentage",
+            "type": "uint16"
+          },
+          {
+            "internalType": "uint16",
+            "name": "_prevContributorsFeePercentage",
+            "type": "uint16"
+          },
+          {
+            "internalType": "uint16",
+            "name": "_topicFeePercentage",
+            "type": "uint16"
+          },
+          {
+            "internalType": "uint16",
+            "name": "_maxChoiceFeePercentage",
+            "type": "uint16"
+          },
+          {
+            "internalType": "uint32",
+            "name": "_relativeSupportThreshold",
+            "type": "uint32"
+          },
+          {
+            "internalType": "uint32",
+            "name": "_fundingPeriod",
+            "type": "uint32"
+          },
+          {
+            "internalType": "uint16",
+            "name": "_fundingPercentage",
+            "type": "uint16"
+          },
+          {
+            "internalType": "address payable",
+            "name": "_funds",
+            "type": "address"
+          }
+        ],
+        "internalType": "struct Topic",
+        "name": "topic",
+        "type": "tuple"
+      }
+    ],
+    "name": "addTopic",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "address", "name": "account", "type": "address" }
+    ],
+    "name": "balanceOf",
+    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "topicId", "type": "uint256" },
+      { "internalType": "uint256", "name": "choiceId", "type": "uint256" }
+    ],
+    "name": "choiceInfo",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "string",
+            "name": "_description",
+            "type": "string"
+          },
+          {
+            "internalType": "address payable",
+            "name": "_funds",
+            "type": "address"
+          },
+          {
+            "internalType": "uint16",
+            "name": "_feePercentage",
+            "type": "uint16"
+          },
+          {
+            "internalType": "uint256",
+            "name": "_fundingTarget",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct Choice",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "topicId", "type": "uint256" },
+      { "internalType": "uint256", "name": "choiceId", "type": "uint256" }
+    ],
+    "name": "choicePositionSummery",
+    "outputs": [
+      { "internalType": "uint256", "name": "tokens", "type": "uint256" },
+      { "internalType": "uint256", "name": "shares", "type": "uint256" }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [{ "internalType": "uint256", "name": "_id", "type": "uint256" }],
+    "name": "getTopicInfoById",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint32",
+            "name": "_cycleDuration",
+            "type": "uint32"
+          },
+          {
+            "internalType": "uint16",
+            "name": "_sharePerCyclePercentage",
+            "type": "uint16"
+          },
+          {
+            "internalType": "uint16",
+            "name": "_prevContributorsFeePercentage",
+            "type": "uint16"
+          },
+          {
+            "internalType": "uint16",
+            "name": "_topicFeePercentage",
+            "type": "uint16"
+          },
+          {
+            "internalType": "uint16",
+            "name": "_maxChoiceFeePercentage",
+            "type": "uint16"
+          },
+          {
+            "internalType": "uint32",
+            "name": "_relativeSupportThreshold",
+            "type": "uint32"
+          },
+          {
+            "internalType": "uint32",
+            "name": "_fundingPeriod",
+            "type": "uint32"
+          },
+          {
+            "internalType": "uint16",
+            "name": "_fundingPercentage",
+            "type": "uint16"
+          },
+          {
+            "internalType": "address payable",
+            "name": "_funds",
+            "type": "address"
+          }
+        ],
+        "internalType": "struct Topic",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "topicId", "type": "uint256" },
+      { "internalType": "uint256", "name": "choiceId", "type": "uint256" },
+      { "internalType": "address", "name": "voter", "type": "address" }
+    ],
+    "name": "getVoterPositionOnChoice",
+    "outputs": [
+      { "internalType": "uint256", "name": "tokens", "type": "uint256" },
+      { "internalType": "uint256", "name": "shares", "type": "uint256" }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "info",
+    "outputs": [
+      { "internalType": "string", "name": "_name", "type": "string" },
+      {
+        "internalType": "contract IERC20",
+        "name": "_token",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_minContributionAmount",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint16",
+        "name": "_maxChoiceFeePercentage",
+        "type": "uint16"
+      },
+      {
+        "internalType": "uint16",
+        "name": "_maxTopicFeePercentage",
+        "type": "uint16"
+      },
+      {
+        "internalType": "uint16",
+        "name": "_arenaFeePercentage",
+        "type": "uint16"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_choiceCreationFee",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_topicCreationFee",
+        "type": "uint256"
+      },
+      { "internalType": "address payable", "name": "_funds", "type": "address" }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "topicId", "type": "uint256" },
+      { "internalType": "uint256", "name": "choiceId", "type": "uint256" },
+      { "internalType": "uint256", "name": "amount", "type": "uint256" }
+    ],
+    "name": "vote",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+]
